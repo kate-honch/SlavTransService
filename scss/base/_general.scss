@@ -1,0 +1,412 @@
+
+.filter {
+    filter: invert(1)!important;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: end;
+    white-space: nowrap;
+    border-bottom: 2px solid #181818;
+    background: -webkit-linear-gradient(#e91e1e, #181818);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #181818;
+    border-radius: 0 5px;
+
+    &:hover {
+        .elem {
+            transform: translateX(10%);
+        }
+    }
+}
+
+.subtitle {
+    font-size: 20px;
+    text-align: center;
+    color: #5F5F5F;
+}
+
+.elem {
+    position: absolute;
+    top: 87px;
+    left: 36px;
+    filter: drop-shadow(-1px -2px 6px red);
+}
+
+.main {
+    overflow: hidden;
+
+    &__container {
+        position: relative;
+        margin: 0 auto;
+        padding: 75px 20px;
+        font-family: 'Work Sans', sans-serif;
+    }
+
+    &__parallax {
+        background-size: cover;
+        background-position: 0px 77.166%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 100%;
+        height: 115px;
+
+        &--first {
+            background-image: url(../images/trucks/truck1.jpg);
+        }
+
+        &--sec {
+            background-image: url(../images/trucks/truck3.jpg);
+        }
+
+        &--third {
+            background-image: url(../images/trucks/truck11.jpg);
+        }
+    }
+
+    &__select {
+        border: none;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &__call {
+        display: block;
+        position: fixed;
+        bottom: 22px;
+        right: 20px;
+        text-align: center;
+        -webkit-animation: vibrate 1.5s .6s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+        background-color: #00e114;
+        transition: 0.4s;
+        border-radius: 50%;
+        box-shadow: 0 3px 8px -2px gray;
+        z-index: 5;
+
+        img {
+            padding: 5px;
+            filter: invert(1);
+        }
+
+        &:hover {
+            background-color: #1ac729;
+        }
+    }
+
+    &__maps {
+        width: 100%;
+        height: 300px;
+        border-radius: 5px;
+    }
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    height: 325px;
+    overflow: hidden;
+    transition: 1s;
+    
+    img {
+        width: 100%;
+    }
+}
+
+.carousel {
+    position: relative;
+    top: 35px;
+
+    &__block {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 350px;
+
+        h1 {
+            margin-bottom: 10px;
+            color: #fff;
+            font-family: "Work Sans",sans-serif;
+            font-size: 35px;
+            font-weight: bold;
+            text-shadow: #181818 1px 0 10px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #fff;
+            font-family: "Work Sans",sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            white-space: nowrap;
+            text-shadow: #181818 1px 0 10px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            font-size: 17px;
+            font-weight: 700;
+            color: #75f17f;
+            text-shadow: #000 1px 0 10px;
+            filter: drop-shadow(-1px -2px 6px green);
+            transition: 0.4s;
+
+            &:hover {
+                color: #40ff50;
+                text-decoration: none;
+            }
+
+            &:active {
+                color: #00e114;
+            }
+        }
+    }
+}
+
+.element-animation {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.element-animation-left {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.element-animation-right {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.element-animation.element-show {
+    opacity: 1;
+    transition: all 1.5s;
+    transform: translateY(0%);
+}
+
+.element-animation-left.element-show {
+    opacity: 1;
+    transition: all 2s;
+    transform: translateX(0%);
+}
+
+.element-animation-right.element-show {
+    opacity: 1;
+    transition: all 2s;
+    transform: translateX(0%);
+}
+
+.running__text {
+    margin-bottom: 20px;
+    font-size: 22px;
+    white-space: nowrap;
+    animation: text 8s infinite linear;
+    color: #181818;
+    
+    span {
+        color: #f82f2f;
+        font-weight: 600;
+    }
+}
+
+@keyframes text {
+    0%{
+        transform: translate(100%, 0);
+    }
+    
+    100%{
+        transform: translate(-150%, 0);
+    }
+}
+
+@keyframes vibrate {
+    2% { transform: rotate(15deg); }
+    4% { transform: rotate(0deg); }
+    6% { transform: rotate(-15deg); }
+    8% { transform: rotate(0deg); }
+    92% { transform: rotate(0deg); }
+    94% { transform: rotate(15deg); }
+    96% { transform: rotate(0deg); }
+    98% { transform: rotate(-15deg); }
+}
+
+@media(min-width: 768px) {
+    .title {
+        font-size: 35px;
+    }
+
+    .main {
+			&__container {
+				width: 680px;
+				padding: 90px 0;
+			}
+
+			&__call {
+				right: 30px;
+
+				img {
+					width: 45px;
+					height: 45px;
+					padding: 5px 10px;
+				}
+			}
+
+			&__parallax {
+				height: 180px;
+				background-attachment: fixed;
+			}
+
+			&__maps {
+				margin-bottom: 25px;
+			}
+    }
+
+    .elem {
+			top: 109px;
+			left: 27px;
+			width: 28px;
+    }
+
+    .carousel {
+			top: 30px;
+
+			&-item {
+				min-height: 400px;
+				max-height: 550px;
+
+				img {
+					min-height: 400px;
+					max-height: 550px;
+				}
+			}
+
+			&__block {
+				top: 100px;
+				width: 680px;
+				text-align: center;
+
+				h1 {
+					margin-bottom: 20px;
+					font-size: 45px;
+				}
+
+				h2 {
+					margin-bottom: 15px;
+					font-size: 30px;
+				}
+
+				a {
+					font-size: 22px;
+				}
+			}
+    }
+
+    .running__text {
+      font-size: 24px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .title {
+        font-size: 50px;
+        border-bottom: 3.5px solid #181818;
+    }
+
+    .main {
+        &__container {
+            width: 1100px;
+            padding: 120px 0;
+        }
+
+        &__parallax {
+            height: 220px;
+        }
+
+        &__call {
+            right: 30px;
+
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        &__maps {
+            margin-bottom: 35px;
+        }
+    }
+
+    .elem {
+        top: 149px;
+        left: 50px;
+        width: 38px;
+    }
+
+    .carousel {
+        top: 15px;
+
+        &-item {
+            min-height: 500px;
+            max-height: 650px;
+
+            img {
+                min-height: 500px;
+                max-height: 650px;
+            }
+        }
+
+        &__block {
+            top: 240px;
+            width: 1100px;
+
+            h1 {
+                margin-bottom: 20px;
+                font-size: 60px;
+            }
+
+            h2 {
+                font-size: 45px;
+            }
+
+            a {
+                font-size: 30px;
+            }
+        }
+    }
+
+    .element-animation-left {
+			opacity: 0;
+			transform: translateX(400px);
+    }
+    
+    .element-animation-right {
+			opacity: 0;
+			transform: translateX(-400px);
+    }
+
+    .element-animation-left.element-show {
+			opacity: 1;
+			transition: all 3.5s;
+			transform: translateX(0%);
+    }
+    
+    .element-animation-right.element-show {
+			opacity: 1;
+			transition: all 3.5s;
+			transform: translateX(0%);
+    }
+
+    .running__text {
+			font-size: 30px;
+			font-weight: 600;
+			animation: text 12s infinite linear;
+    }
+}
+
+
